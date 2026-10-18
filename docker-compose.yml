@@ -1,0 +1,22 @@
+# NexusMart warehouse database.  Start:  docker compose up -d
+# Power BI Desktop (Windows) connects to  localhost:5432  (database nexusmart, user nexus).
+# Airflow services are added in the next step.
+services:
+  postgres:
+    image: postgres:16
+    container_name: nexusmart_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-nexus}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nexus_pass}
+      POSTGRES_DB: ${POSTGRES_DB:-nexusmart}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-nexus} -d ${POSTGRES_DB:-nexusmart}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  pgdata:

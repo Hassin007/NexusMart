@@ -1,0 +1,1428 @@
+{
+  "customers": {
+    "rows": 45000,
+    "exact_duplicate_rows": 0,
+    "duplicate_key_rows": 0,
+    "columns": {
+      "customer_id": {
+        "blank": 0,
+        "distinct": 45000,
+        "whitespace_padded": 0,
+        "top_values": {
+          "C000001": 1,
+          "C000002": 1,
+          "C000003": 1,
+          "C000004": 1,
+          "C000005": 1,
+          "C000006": 1,
+          "C000007": 1,
+          "C000008": 1
+        },
+        "shapes": {
+          "a999999": 45000
+        }
+      },
+      "full_name": {
+        "blank": 0,
+        "distinct": 3463,
+        "whitespace_padded": 2275,
+        "top_values": {
+          "Asad Akhtar": 80,
+          "Zeeshan Rizvi": 72,
+          "Danish Abbasi": 71,
+          "Naveed Hashmi": 70,
+          "Imran Butt": 70,
+          "Omar Memon": 70,
+          "Kashif Chaudhry": 70,
+          "Imran Malik": 70
+        },
+        "shapes": {
+          "aaaaaa aaaaa": 4990,
+          "aaaaa aaaaa": 4492,
+          "aaaaaa aaaaaa": 3676,
+          "aaaa aaaaa": 3553,
+          "aaaaa aaaaaa": 3077,
+          "aaaaaa aaaa": 2825
+        }
+      },
+      "email": {
+        "blank": 1698,
+        "distinct": 42752,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 1698,
+          "asad.chaudhry8028@gmail.com": 3,
+          "noor.farooqui6325@gmail.com": 3,
+          "bilal.rizvi3269@gmail.com": 3,
+          "nida.memon6133@yahoo.com": 2,
+          "komal.siddiqui2689@gmail.com": 2,
+          "nida.iqbal7963@gmail.com": 2,
+          "naveed.khan6073@gmail.com": 2
+        },
+        "shapes": {
+          "aaaaaa.aaaaa9999@aaaaa.aaa": 3690,
+          "aaaaa.aaaaa9999@aaaaa.aaa": 3353,
+          "aaaaaa.aaaaaa9999@aaaaa.aaa": 2729,
+          "aaaa.aaaaa9999@aaaaa.aaa": 2622,
+          "aaaaa.aaaaaa9999@aaaaa.aaa": 2282,
+          "aaaaaa.aaaa9999@aaaaa.aaa": 2165
+        }
+      },
+      "phone": {
+        "blank": 3599,
+        "distinct": 40860,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 3599,
+          "0343-4328042": 2,
+          "03242747101": 2,
+          "03006046273": 2,
+          "0321-2634025": 2,
+          "03143544531": 2,
+          "03079840954": 2,
+          "0325-3300389": 2
+        },
+        "shapes": {
+          "99999999999": 14530,
+          "9999-9999999": 12289,
+          "+999999999999": 6176,
+          "999 9999999": 4248,
+          "9999 9999999": 4158,
+          "": 3599
+        }
+      },
+      "gender": {
+        "blank": 2199,
+        "distinct": 9,
+        "whitespace_padded": 0,
+        "top_values": {
+          "M": 16672,
+          "F": 13344,
+          "male": 2382,
+          "Male": 2328,
+          "m": 2327,
+          "": 2199,
+          "f": 1949,
+          "Female": 1909
+        }
+      },
+      "registration_date": {
+        "blank": 0,
+        "distinct": 2501,
+        "whitespace_padded": 0,
+        "top_values": {
+          "2023-12-27": 141,
+          "2024-02-15": 137,
+          "2024-02-21": 136,
+          "2024-01-30": 134,
+          "2023-12-28": 128,
+          "2024-02-08": 127,
+          "2024-02-19": 127,
+          "2024-01-06": 127
+        },
+        "shapes": {
+          "9999-99-99": 38087,
+          "99/99/9999": 3760,
+          "aaa 99 9999": 2235,
+          "aaa 9 9999": 918
+        }
+      },
+      "city_id": {
+        "blank": 2233,
+        "distinct": 651,
+        "whitespace_padded": 0,
+        "top_values": {
+          "614": 7828,
+          "450": 6417,
+          "347": 3031,
+          "": 2233,
+          "281": 2178,
+          "535": 1938,
+          "86": 1471,
+          "601": 1221
+        },
+        "shapes": {
+          "999": 39101,
+          "99": 3567,
+          "": 2233,
+          "9": 99
+        },
+        "numeric": {
+          "min": 1.0,
+          "median": 450.0,
+          "max": 650.0,
+          "negative": 0,
+          "zero": 0,
+          "unparseable": 0
+        }
+      },
+      "birth_year": {
+        "blank": 4600,
+        "distinct": 51,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 4600,
+          "2007": 2395,
+          "1993": 1878,
+          "1991": 1766,
+          "1992": 1759,
+          "1995": 1736,
+          "1994": 1727,
+          "1990": 1703
+        },
+        "shapes": {
+          "9999": 40400,
+          "": 4600
+        }
+      }
+    }
+  },
+  "products": {
+    "rows": 3200,
+    "exact_duplicate_rows": 0,
+    "duplicate_key_rows": 0,
+    "columns": {
+      "product_id": {
+        "blank": 0,
+        "distinct": 3200,
+        "whitespace_padded": 0,
+        "top_values": {
+          "P00001": 1,
+          "P00002": 1,
+          "P00003": 1,
+          "P00004": 1,
+          "P00005": 1,
+          "P00006": 1,
+          "P00007": 1,
+          "P00008": 1
+        },
+        "shapes": {
+          "a99999": 3200
+        }
+      },
+      "product_name": {
+        "blank": 0,
+        "distinct": 3176,
+        "whitespace_padded": 123,
+        "top_values": {
+          "Zeta Yoga Mat M69": 2,
+          "ElecPro Power Strip D878": 2,
+          "Orion Bedsheet King M507": 2,
+          "Zeta Abaya L431": 2,
+          "ZETA STORAGE BOX F532": 2,
+          "Generic Laptop Stand P215": 2,
+          "HomePro Storage Box R948": 2,
+          "Generic Spice Box C236": 2
+        },
+        "shapes": {
+          "aaaaaaa aaaaaa aaaaa a999": 88,
+          "aaaaaaa aaaaa aaaaa a999": 68,
+          "aaaaaaa aaaa aaaaa a999": 65,
+          "aaaaaaa aaaaaaaa aaaa a999": 58,
+          "aaaaaaa aaaaa aaaa a999": 55,
+          "aaaaaaa aaaaaaa a999": 53
+        }
+      },
+      "category": {
+        "blank": 0,
+        "distinct": 74,
+        "whitespace_padded": 641,
+        "top_values": {
+          "Fashion": 289,
+          "Mobile & Accessories": 189,
+          "Home & Kitchen": 178,
+          "Electronics": 163,
+          "Beauty & Personal Care": 126,
+          "Footwear": 124,
+          "Grocery": 104,
+          "Sports & Outdoors": 94
+        },
+        "shapes": {
+          "aaaaaaa": 503,
+          "aaaa & aaaaaaa": 223,
+          "aaaaaa & aaaaaaaaaaa": 222,
+          "aaaaaa & aaaaaaaa": 218,
+          "aaaaaaaaaaa": 204,
+          "aaaaaaaa": 188
+        }
+      },
+      "sub_category": {
+        "blank": 485,
+        "distinct": 37,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 485,
+          "Fashion Basics": 163,
+          "Fashion Premium": 150,
+          "Fashion Essentials": 141,
+          "Mobile Essentials": 132,
+          "Home Premium": 130,
+          "Mobile Premium": 118,
+          "Mobile Basics": 113
+        },
+        "shapes": {
+          "": 485,
+          "aaaaaa aaaaaaaaaa": 327,
+          "aaaaaa aaaaaa": 309,
+          "aaaaaa aaaaaaa": 291,
+          "aaaaaaa aaaaaa": 228,
+          "aaaaaaa aaaaaaa": 207
+        }
+      },
+      "brand": {
+        "blank": 392,
+        "distinct": 17,
+        "whitespace_padded": 0,
+        "top_values": {
+          "NexusChoice": 582,
+          "Generic": 570,
+          "Zeta": 549,
+          "Orion": 542,
+          "": 392,
+          "FashPro": 88,
+          "HomePro": 70,
+          "ElecPro": 66
+        }
+      },
+      "list_price": {
+        "blank": 0,
+        "distinct": 970,
+        "whitespace_padded": 0,
+        "top_values": {
+          "880": 21,
+          "840": 20,
+          "980": 19,
+          "640": 19,
+          "770": 18,
+          "1090": 18,
+          "740": 18,
+          "1200": 17
+        },
+        "shapes": {
+          "9999": 2085,
+          "999": 842,
+          "99999": 155,
+          "aa. 9,999": 65,
+          "aa. 999": 35,
+          "9999999": 5
+        },
+        "numeric": {
+          "min": -3810.0,
+          "median": 1660.0,
+          "max": 9999999.0,
+          "negative": 4,
+          "zero": 4,
+          "unparseable": 0
+        }
+      },
+      "cost_price": {
+        "blank": 170,
+        "distinct": 1878,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 170,
+          "772": 8,
+          "624": 8,
+          "297": 7,
+          "580": 7,
+          "631": 6,
+          "420": 6,
+          "429": 6
+        },
+        "shapes": {
+          "999": 1497,
+          "9999": 1411,
+          "": 170,
+          "99999": 118,
+          "99": 4
+        },
+        "numeric": {
+          "min": 82.0,
+          "median": 1009.5,
+          "max": 83205.0,
+          "negative": 0,
+          "zero": 0,
+          "unparseable": 0
+        }
+      },
+      "weight_kg": {
+        "blank": 296,
+        "distinct": 473,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 296,
+          "0.44": 39,
+          "0.38": 35,
+          "0.4": 35,
+          "0.39": 34,
+          "0.36": 34,
+          "0.5": 33,
+          "0.59": 33
+        },
+        "shapes": {
+          "9.99": 2583,
+          "9.9": 298,
+          "": 296,
+          "-9.9": 10,
+          "999.9": 7,
+          "99.9": 5
+        },
+        "numeric": {
+          "min": -1.0,
+          "median": 0.77,
+          "max": 629.0,
+          "negative": 10,
+          "zero": 0,
+          "unparseable": 0
+        }
+      },
+      "seller_id": {
+        "blank": 0,
+        "distinct": 407,
+        "whitespace_padded": 0,
+        "top_values": {
+          "S0108": 51,
+          "S0256": 40,
+          "S0203": 39,
+          "S0351": 36,
+          "S0283": 36,
+          "S0219": 34,
+          "S0310": 34,
+          "S0286": 33
+        },
+        "shapes": {
+          "a9999": 3200
+        }
+      }
+    }
+  },
+  "sellers": {
+    "rows": 420,
+    "exact_duplicate_rows": 0,
+    "duplicate_key_rows": 0,
+    "columns": {
+      "seller_id": {
+        "blank": 0,
+        "distinct": 420,
+        "whitespace_padded": 0,
+        "top_values": {
+          "S0001": 1,
+          "S0002": 1,
+          "S0003": 1,
+          "S0004": 1,
+          "S0005": 1,
+          "S0006": 1,
+          "S0007": 1,
+          "S0008": 1
+        },
+        "shapes": {
+          "a9999": 420
+        }
+      },
+      "seller_name": {
+        "blank": 0,
+        "distinct": 415,
+        "whitespace_padded": 15,
+        "top_values": {
+          "Best Enterprises 2": 2,
+          "Royal Mart 46": 2,
+          "Lahore Enterprises 17": 2,
+          "Smart Mart 6": 2,
+          "Pak Collection 16": 2,
+          "Karachi Traders 84": 1,
+          "Crown Collection 32 ": 1,
+          "Metro Mart 5": 1
+        },
+        "shapes": {
+          "aaaaa aaaaaaa 99": 31,
+          "aaaaa aaaaaa 99": 22,
+          "aaaaa aaa 99": 20,
+          "aaaaa aaaaaaaaa 99": 18,
+          "aaaaa aaaaaaaa 99": 17,
+          "aaaaa aaaa 99": 17
+        }
+      },
+      "join_date": {
+        "blank": 34,
+        "distinct": 358,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 34,
+          "2021-04-29": 3,
+          "2022-03-17": 3,
+          "2022-10-16": 2,
+          "2021-02-04": 2,
+          "2021-06-13": 2,
+          "2023-11-20": 2,
+          "2021-04-01": 2
+        },
+        "shapes": {
+          "9999-99-99": 327,
+          "99/99/9999": 36,
+          "": 34,
+          "aaa 99 9999": 17,
+          "aaa 9 9999": 6
+        }
+      },
+      "seller_tier": {
+        "blank": 22,
+        "distinct": 11,
+        "whitespace_padded": 5,
+        "top_values": {
+          "Bronze": 215,
+          "Silver": 79,
+          "Gold": 35,
+          "BRONZE": 25,
+          "": 22,
+          "bronze": 19,
+          "SILVER": 12,
+          "silver": 5
+        }
+      },
+      "city_id": {
+        "blank": 0,
+        "distinct": 106,
+        "whitespace_padded": 0,
+        "top_values": {
+          "614": 83,
+          "450": 62,
+          "347": 35,
+          "86": 21,
+          "281": 21,
+          "535": 15,
+          "426": 11,
+          "601": 8
+        },
+        "shapes": {
+          "999": 390,
+          "99": 30
+        },
+        "numeric": {
+          "min": 23.0,
+          "median": 450.0,
+          "max": 643.0,
+          "negative": 0,
+          "zero": 0,
+          "unparseable": 0
+        }
+      },
+      "rating": {
+        "blank": 33,
+        "distinct": 26,
+        "whitespace_padded": 0,
+        "top_values": {
+          "4.1": 38,
+          "": 33,
+          "4.3": 30,
+          "4.0": 28,
+          "3.9": 24,
+          "4.7": 24,
+          "4.2": 23,
+          "4.4": 22
+        },
+        "numeric": {
+          "min": 0.0,
+          "median": 4.1,
+          "max": 11.0,
+          "negative": 0,
+          "zero": 11,
+          "unparseable": 0
+        }
+      }
+    }
+  },
+  "locations": {
+    "rows": 650,
+    "exact_duplicate_rows": 0,
+    "duplicate_key_rows": 0,
+    "columns": {
+      "city_id": {
+        "blank": 0,
+        "distinct": 650,
+        "whitespace_padded": 0,
+        "top_values": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "8": 1
+        },
+        "shapes": {
+          "999": 551,
+          "99": 90,
+          "9": 9
+        },
+        "numeric": {
+          "min": 1.0,
+          "median": 325.5,
+          "max": 650.0,
+          "negative": 0,
+          "zero": 0,
+          "unparseable": 0
+        }
+      },
+      "city": {
+        "blank": 0,
+        "distinct": 650,
+        "whitespace_padded": 12,
+        "top_values": {
+          "PurPurPur": 1,
+          "SaraiTandoKot": 1,
+          "WalaSaraiBasti": 1,
+          "ShahChakAbad": 1,
+          "RahKila": 1,
+          "AliDera": 1,
+          "KalanMian": 1,
+          "SaraiJand": 1
+        },
+        "shapes": {
+          "aaaaaaaa": 111,
+          "aaaaaaaaaaaa": 104,
+          "aaaaaaa": 93,
+          "aaaaaaaaaaa": 91,
+          "aaaaaaaaa": 69,
+          "aaaaaaaaaaaaa": 56
+        }
+      },
+      "province": {
+        "blank": 25,
+        "distinct": 22,
+        "whitespace_padded": 3,
+        "top_values": {
+          "Punjab": 250,
+          "Sindh": 125,
+          "Khyber Pakhtunkhwa": 82,
+          "Balochistan": 46,
+          "": 25,
+          "Panjab": 17,
+          "Gilgit-Baltistan": 13,
+          "Azad Kashmir": 13
+        }
+      },
+      "region": {
+        "blank": 0,
+        "distinct": 3,
+        "whitespace_padded": 0,
+        "top_values": {
+          "Central": 300,
+          "South": 212,
+          "North": 138
+        }
+      },
+      "latitude": {
+        "blank": 33,
+        "distinct": 616,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 33,
+          "31.5008": 2,
+          "32.9045": 2,
+          "26.1297": 1,
+          "31.3893": 1,
+          "31.808": 1,
+          "28.282": 1,
+          "26.6041": 1
+        },
+        "shapes": {
+          "99.9999": 528,
+          "99.999": 42,
+          "99.99": 42,
+          "": 33,
+          "99.9": 5
+        },
+        "numeric": {
+          "min": 23.3071,
+          "median": 30.8917,
+          "max": 72.9616,
+          "negative": 0,
+          "zero": 0,
+          "unparseable": 0
+        }
+      },
+      "longitude": {
+        "blank": 31,
+        "distinct": 616,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 31,
+          "73.4519": 2,
+          "73.2399": 2,
+          "67.4894": 2,
+          "72.36": 2,
+          "68.2655": 1,
+          "73.2073": 1,
+          "71.8958": 1
+        },
+        "shapes": {
+          "99.9999": 508,
+          "99.999": 57,
+          "99.99": 49,
+          "": 31,
+          "99.9": 5
+        },
+        "numeric": {
+          "min": 28.2568,
+          "median": 71.7598,
+          "max": 79.0002,
+          "negative": 0,
+          "zero": 0,
+          "unparseable": 0
+        }
+      },
+      "population_tier": {
+        "blank": 0,
+        "distinct": 3,
+        "whitespace_padded": 0,
+        "top_values": {
+          "Tier-3": 634,
+          "Tier-2": 10,
+          "Metro": 6
+        }
+      }
+    }
+  },
+  "orders": {
+    "rows": 163200,
+    "exact_duplicate_rows": 3200,
+    "duplicate_key_rows": 3200,
+    "columns": {
+      "order_id": {
+        "blank": 0,
+        "distinct": 160000,
+        "whitespace_padded": 0,
+        "top_values": {
+          "O0018251": 2,
+          "O0025356": 2,
+          "O0016395": 2,
+          "O0136515": 2,
+          "O0045454": 2,
+          "O0007344": 2,
+          "O0029102": 2,
+          "O0004599": 2
+        },
+        "shapes": {
+          "a9999999": 163200
+        }
+      },
+      "customer_id": {
+        "blank": 0,
+        "distinct": 33756,
+        "whitespace_padded": 0,
+        "top_values": {
+          "C005382": 158,
+          "C033697": 138,
+          "C015921": 130,
+          "C001819": 129,
+          "C023121": 107,
+          "C026596": 107,
+          "C027830": 106,
+          "C023556": 104
+        },
+        "shapes": {
+          "a999999": 162870,
+          "a99999": 330
+        }
+      },
+      "order_date": {
+        "blank": 0,
+        "distinct": 2008,
+        "whitespace_padded": 0,
+        "top_values": {
+          "2025-05-31": 678,
+          "2024-11-11": 658,
+          "2025-06-01": 644,
+          "2025-03-30": 591,
+          "2025-06-03": 580,
+          "2025-03-25": 569,
+          "2025-06-05": 561,
+          "2024-11-10": 556
+        },
+        "shapes": {
+          "9999-99-99": 138516,
+          "99/99/9999": 13583,
+          "aaa 99 9999": 7742,
+          "aaa 9 9999": 3359
+        }
+      },
+      "order_status": {
+        "blank": 0,
+        "distinct": 20,
+        "whitespace_padded": 924,
+        "top_values": {
+          "Delivered": 108289,
+          "Cancelled": 11222,
+          "Complete": 7292,
+          "DELIVERD": 7175,
+          "Completed": 7153,
+          "DELIVERED": 7118,
+          "delivered": 6911,
+          "Returned": 2194
+        }
+      },
+      "ship_city_id": {
+        "blank": 6516,
+        "distinct": 651,
+        "whitespace_padded": 0,
+        "top_values": {
+          "614": 28706,
+          "450": 23339,
+          "347": 11151,
+          "281": 7881,
+          "535": 7447,
+          "": 6516,
+          "86": 5336,
+          "601": 4376
+        },
+        "shapes": {
+          "999": 143584,
+          "99": 12776,
+          "": 6516,
+          "9": 324
+        },
+        "numeric": {
+          "min": 1.0,
+          "median": 450.0,
+          "max": 650.0,
+          "negative": 0,
+          "zero": 0,
+          "unparseable": 0
+        }
+      },
+      "order_total": {
+        "blank": 0,
+        "distinct": 32728,
+        "whitespace_padded": 0,
+        "top_values": {
+          "0": 177,
+          "9999999": 155,
+          "1058": 51,
+          "1034": 42,
+          "1358": 41,
+          "1564": 40,
+          "1334": 39,
+          "1032": 39
+        },
+        "shapes": {
+          "9999": 106187,
+          "99999": 38270,
+          "999": 13922,
+          "aa. 9,999": 2649,
+          "aa. 99,999": 1004,
+          "aa. 999": 371
+        },
+        "numeric": {
+          "min": -78112.0,
+          "median": 4838.0,
+          "max": 9999999.0,
+          "negative": 169,
+          "zero": 177,
+          "unparseable": 0
+        }
+      },
+      "discount_code": {
+        "blank": 112059,
+        "distinct": 33,
+        "whitespace_padded": 2099,
+        "top_values": {
+          "": 112059,
+          "SAVE15": 7846,
+          "SAVE10": 7352,
+          "SAVE20": 6763,
+          "SAVE40": 5898,
+          "SAVE30": 5246,
+          "SAVE5": 5066,
+          "SAVE25": 4112
+        },
+        "shapes": {
+          "": 112059,
+          "aaaa99": 43510,
+          "aaaa9": 5532,
+          " aaaa99": 1841,
+          " aaaa9": 258
+        }
+      },
+      "channel": {
+        "blank": 0,
+        "distinct": 12,
+        "whitespace_padded": 0,
+        "top_values": {
+          "App": 69259,
+          "Web": 41646,
+          "Mobile Web": 27941,
+          "Mobile App": 4069,
+          "app": 4036,
+          "APP": 4029,
+          "WEB": 2482,
+          "Website": 2463
+        }
+      }
+    }
+  },
+  "order_items": {
+    "rows": 315143,
+    "exact_duplicate_rows": 0,
+    "duplicate_key_rows": 0,
+    "columns": {
+      "order_item_id": {
+        "blank": 0,
+        "distinct": 315143,
+        "whitespace_padded": 0,
+        "top_values": {
+          "OI00000001": 1,
+          "OI00000002": 1,
+          "OI00000003": 1,
+          "OI00000004": 1,
+          "OI00000005": 1,
+          "OI00000006": 1,
+          "OI00000007": 1,
+          "OI00000008": 1
+        },
+        "shapes": {
+          "aa99999999": 315143
+        }
+      },
+      "order_id": {
+        "blank": 0,
+        "distinct": 160000,
+        "whitespace_padded": 0,
+        "top_values": {
+          "O0043196": 8,
+          "O0053932": 8,
+          "O0056929": 8,
+          "O0070728": 8,
+          "O0075106": 8,
+          "O0106084": 8,
+          "O0119167": 8,
+          "O0137459": 8
+        },
+        "shapes": {
+          "a9999999": 315143
+        }
+      },
+      "product_id": {
+        "blank": 0,
+        "distinct": 4086,
+        "whitespace_padded": 0,
+        "top_values": {
+          "P02368": 1754,
+          "P02949": 1650,
+          "P01315": 1522,
+          "P00294": 1506,
+          "P02348": 1171,
+          "P00626": 1099,
+          "P01557": 1085,
+          "P02225": 1071
+        },
+        "shapes": {
+          "a99999": 315143
+        }
+      },
+      "seller_id": {
+        "blank": 0,
+        "distinct": 407,
+        "whitespace_padded": 0,
+        "top_values": {
+          "S0283": 8165,
+          "S0286": 5567,
+          "S0203": 4427,
+          "S0288": 4421,
+          "S0310": 4127,
+          "S0271": 4001,
+          "S0256": 3704,
+          "S0351": 3653
+        },
+        "shapes": {
+          "a9999": 315143
+        }
+      },
+      "quantity": {
+        "blank": 0,
+        "distinct": 24,
+        "whitespace_padded": 0,
+        "top_values": {
+          "1": 186706,
+          "2": 71061,
+          "3": 31529,
+          "4": 12740,
+          "5": 6230,
+          "1.0": 2866,
+          "2.0": 1151,
+          "500": 641
+        },
+        "numeric": {
+          "min": -6.0,
+          "median": 1.0,
+          "max": 500.0,
+          "negative": 307,
+          "zero": 0,
+          "unparseable": 965
+        }
+      },
+      "unit_price": {
+        "blank": 0,
+        "distinct": 21868,
+        "whitespace_padded": 0,
+        "top_values": {
+          "0": 331,
+          "9999999": 305,
+          "678": 274,
+          "667": 265,
+          "469": 265,
+          "466": 262,
+          "405": 261,
+          "467": 261
+        },
+        "shapes": {
+          "9999": 204202,
+          "999": 88887,
+          "99999": 12578,
+          "aa. 9,999": 5463,
+          "aa. 999": 2238,
+          "9": 331
+        },
+        "numeric": {
+          "min": -41270.0,
+          "median": 1619.0,
+          "max": 9999999.0,
+          "negative": 316,
+          "zero": 331,
+          "unparseable": 0
+        }
+      },
+      "discount_amount": {
+        "blank": 31567,
+        "distinct": 7557,
+        "whitespace_padded": 0,
+        "top_values": {
+          "0": 191033,
+          "": 31567,
+          "102": 208,
+          "100": 206,
+          "140": 204,
+          "68": 203,
+          "70": 196,
+          "136": 188
+        },
+        "shapes": {
+          "9": 191056,
+          "999": 56898,
+          "": 31567,
+          "9999": 24673,
+          "99": 9770,
+          "99999": 1176
+        }
+      }
+    }
+  },
+  "payments": {
+    "rows": 168111,
+    "exact_duplicate_rows": 3296,
+    "duplicate_key_rows": 3296,
+    "columns": {
+      "payment_id": {
+        "blank": 0,
+        "distinct": 164815,
+        "whitespace_padded": 0,
+        "top_values": {
+          "PAY00028793": 2,
+          "PAY00013539": 2,
+          "PAY00048432": 2,
+          "PAY00031741": 2,
+          "PAY00004911": 2,
+          "PAY00005975": 2,
+          "PAY00042971": 2,
+          "PAY00025810": 2
+        },
+        "shapes": {
+          "aaa99999999": 168111
+        }
+      },
+      "order_id": {
+        "blank": 0,
+        "distinct": 160000,
+        "whitespace_padded": 0,
+        "top_values": {
+          "O0151846": 4,
+          "O0122096": 4,
+          "O0025511": 3,
+          "O0035243": 3,
+          "O0148393": 3,
+          "O0070730": 3,
+          "O0000239": 3,
+          "O0063276": 3
+        },
+        "shapes": {
+          "a9999999": 168111
+        }
+      },
+      "payment_method": {
+        "blank": 0,
+        "distinct": 22,
+        "whitespace_padded": 5355,
+        "top_values": {
+          "COD": 64761,
+          "Card": 21802,
+          "JazzCash": 16008,
+          "EasyPaisa": 14972,
+          "Bank Transfer": 8475,
+          "Cash on Delivery": 5460,
+          "Cash On Delivery": 5394,
+          "COD ": 5355
+        }
+      },
+      "payment_status": {
+        "blank": 0,
+        "distinct": 17,
+        "whitespace_padded": 757,
+        "top_values": {
+          "Paid": 113729,
+          "PAID": 9644,
+          "paid": 9632,
+          "Complete": 9509,
+          "Success": 9472,
+          "Cancelled": 9153,
+          "Refunded": 2370,
+          "cancelled": 814
+        }
+      },
+      "amount": {
+        "blank": 0,
+        "distinct": 33179,
+        "whitespace_padded": 0,
+        "top_values": {
+          "9999999": 168,
+          "0": 165,
+          "1058": 50,
+          "1358": 46,
+          "1034": 44,
+          "1334": 43,
+          "1376": 41,
+          "834": 40
+        },
+        "shapes": {
+          "9999": 109023,
+          "99999": 37844,
+          "999": 15729,
+          "aa. 9,999": 2819,
+          "aa. 99,999": 971,
+          "-9999": 477
+        },
+        "numeric": {
+          "min": -143168.0,
+          "median": 4622.0,
+          "max": 9999999.0,
+          "negative": 671,
+          "zero": 165,
+          "unparseable": 0
+        }
+      },
+      "payment_date": {
+        "blank": 5017,
+        "distinct": 1687,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 5017,
+          "2025-06-05": 549,
+          "2025-03-30": 542,
+          "2025-06-03": 537,
+          "2025-06-06": 500,
+          "2025-03-29": 493,
+          "2025-03-28": 492,
+          "2025-06-04": 483
+        },
+        "shapes": {
+          "9999-99-99": 138906,
+          "99/99/9999": 13503,
+          "aaa 99 9999": 7382,
+          "": 5017,
+          "aaa 9 9999": 3303
+        }
+      }
+    }
+  },
+  "shipping": {
+    "rows": 151228,
+    "exact_duplicate_rows": 0,
+    "duplicate_key_rows": 0,
+    "columns": {
+      "shipment_id": {
+        "blank": 0,
+        "distinct": 151228,
+        "whitespace_padded": 0,
+        "top_values": {
+          "SH00000001": 1,
+          "SH00000002": 1,
+          "SH00000003": 1,
+          "SH00000004": 1,
+          "SH00000005": 1,
+          "SH00000006": 1,
+          "SH00000007": 1,
+          "SH00000008": 1
+        },
+        "shapes": {
+          "aa99999999": 151228
+        }
+      },
+      "order_id": {
+        "blank": 0,
+        "distinct": 151228,
+        "whitespace_padded": 0,
+        "top_values": {
+          "O0000001": 1,
+          "O0000002": 1,
+          "O0000003": 1,
+          "O0000004": 1,
+          "O0000005": 1,
+          "O0000006": 1,
+          "O0000007": 1,
+          "O0000008": 1
+        },
+        "shapes": {
+          "a9999999": 151228
+        }
+      },
+      "courier": {
+        "blank": 0,
+        "distinct": 22,
+        "whitespace_padded": 0,
+        "top_values": {
+          "TCS": 36319,
+          "Leopards": 26570,
+          "M&P": 18256,
+          "Trax": 15652,
+          "PostEx": 14401,
+          "BlueEx": 9662,
+          "tcs": 3090,
+          "TCS Express": 3001
+        }
+      },
+      "shipped_date": {
+        "blank": 5943,
+        "distinct": 1658,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 5943,
+          "2025-06-02": 534,
+          "2025-06-01": 528,
+          "2024-11-11": 514,
+          "2025-03-30": 498,
+          "2025-03-25": 482,
+          "2025-03-26": 477,
+          "2025-06-05": 476
+        },
+        "shapes": {
+          "9999-99-99": 123431,
+          "99/99/9999": 12118,
+          "aaa 99 9999": 6807,
+          "": 5943,
+          "aaa 9 9999": 2929
+        }
+      },
+      "delivered_date": {
+        "blank": 18841,
+        "distinct": 1689,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 18841,
+          "2025-06-03": 427,
+          "2025-06-09": 422,
+          "2025-03-31": 421,
+          "2025-06-05": 419,
+          "2025-06-07": 416,
+          "2025-04-01": 414,
+          "2025-06-08": 408
+        },
+        "shapes": {
+          "9999-99-99": 112611,
+          "": 18841,
+          "99/99/9999": 10875,
+          "aaa 99 9999": 6326,
+          "aaa 9 9999": 2575
+        }
+      },
+      "shipping_fee": {
+        "blank": 9145,
+        "distinct": 2964,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 9145,
+          "256": 385,
+          "227": 370,
+          "240": 370,
+          "237": 358,
+          "231": 355,
+          "222": 352,
+          "243": 347
+        },
+        "shapes": {
+          "999": 127171,
+          "9999": 14458,
+          "": 9145,
+          "9999999": 166,
+          "-999": 140,
+          "9": 129
+        },
+        "numeric": {
+          "min": -2577.0,
+          "median": 421.0,
+          "max": 9999999.0,
+          "negative": 159,
+          "zero": 129,
+          "unparseable": 0
+        }
+      },
+      "delivery_status": {
+        "blank": 0,
+        "distinct": 15,
+        "whitespace_padded": 0,
+        "top_values": {
+          "Delivered": 108093,
+          "DELIVERD": 7334,
+          "Completed": 7218,
+          "Complete": 7192,
+          "DELIVERED": 7092,
+          "delivered": 7056,
+          "Returned to Seller": 4412,
+          "In Transit": 1024
+        }
+      }
+    }
+  },
+  "returns": {
+    "rows": 16048,
+    "exact_duplicate_rows": 0,
+    "duplicate_key_rows": 0,
+    "columns": {
+      "return_id": {
+        "blank": 0,
+        "distinct": 16048,
+        "whitespace_padded": 0,
+        "top_values": {
+          "R000001": 1,
+          "R000002": 1,
+          "R000003": 1,
+          "R000004": 1,
+          "R000005": 1,
+          "R000006": 1,
+          "R000007": 1,
+          "R000008": 1
+        },
+        "shapes": {
+          "a999999": 16048
+        }
+      },
+      "order_item_id": {
+        "blank": 0,
+        "distinct": 16048,
+        "whitespace_padded": 0,
+        "top_values": {
+          "OI00000155": 1,
+          "OI00000220": 1,
+          "OI00000308": 1,
+          "OI00000553": 1,
+          "OI00000397": 1,
+          "OI00001318": 1,
+          "OI00000153": 1,
+          "OI00000236": 1
+        },
+        "shapes": {
+          "aa99999999": 15909,
+          "aa99999": 139
+        }
+      },
+      "return_date": {
+        "blank": 0,
+        "distinct": 1510,
+        "whitespace_padded": 0,
+        "top_values": {
+          "2025-04-06": 55,
+          "2025-04-07": 50,
+          "2025-03-31": 49,
+          "2025-06-12": 48,
+          "2025-03-22": 47,
+          "2025-04-04": 47,
+          "2025-04-03": 46,
+          "2025-06-13": 46
+        },
+        "shapes": {
+          "9999-99-99": 13732,
+          "99/99/9999": 1264,
+          "aaa 99 9999": 774,
+          "aaa 9 9999": 278
+        }
+      },
+      "return_reason": {
+        "blank": 2390,
+        "distinct": 38,
+        "whitespace_padded": 0,
+        "top_values": {
+          "": 2390,
+          "Size/fit issue": 1680,
+          "Not as described": 1469,
+          "Quality issue": 1419,
+          "Damaged product": 1400,
+          "Changed mind": 1134,
+          "Wrong item delivered": 536,
+          "Colour mismatch": 472
+        },
+        "shapes": {
+          "": 2390,
+          "aaa aa aaaaaaaaa": 2046,
+          "aaaaaaa aaaaa": 1706,
+          "aaaa/aaa aaaaa": 1680,
+          "aaaaaaa aaaaaaa": 1650,
+          "aaaaaaa aaaa": 1180
+        }
+      },
+      "return_status": {
+        "blank": 0,
+        "distinct": 10,
+        "whitespace_padded": 0,
+        "top_values": {
+          "Refunded": 8673,
+          "Approved": 2403,
+          "Refund": 997,
+          "Rejected": 979,
+          "REFUNDED": 976,
+          "refunded": 903,
+          "APPROVED": 407,
+          "approved": 367
+        }
+      },
+      "refund_amount": {
+        "blank": 0,
+        "distinct": 6958,
+        "whitespace_padded": 0,
+        "top_values": {
+          "0": 1261,
+          "Rs. 0": 36,
+          "768": 14,
+          "1222": 12,
+          "802": 11,
+          "1768": 11,
+          "1333": 10,
+          "1354": 10
+        },
+        "shapes": {
+          "9999": 10408,
+          "999": 2873,
+          "9": 1261,
+          "99999": 1070,
+          "aa. 9,999": 280,
+          "aa. 999": 84
+        },
+        "numeric": {
+          "min": 0.0,
+          "median": 2022.0,
+          "max": 250592.0,
+          "negative": 0,
+          "zero": 1297,
+          "unparseable": 0
+        }
+      }
+    }
+  }
+}

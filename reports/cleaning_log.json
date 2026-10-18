@@ -1,0 +1,263 @@
+{
+  "locations": {
+    "file": "locations",
+    "raw_rows": 650,
+    "rejected": {
+      "DUPLICATE_EXACT": 0
+    },
+    "repairs": {
+      "lat_lon_swapped": 6,
+      "province_inferred": 25
+    },
+    "flags": {
+      "lat_lon_missing_or_out_of_range": 62,
+      "province_still_unknown": 0
+    },
+    "labels_standardised": {
+      "locations.province": 92,
+      "locations.population_tier": 0
+    },
+    "clean_rows": 650,
+    "merged_into_master": 0,
+    "identity_ok": true
+  },
+  "sellers": {
+    "file": "sellers",
+    "raw_rows": 420,
+    "rejected": {
+      "DUPLICATE_EXACT": 0
+    },
+    "repairs": {},
+    "flags": {
+      "rating_out_of_range_set_null": 22,
+      "rating_missing": 33,
+      "join_date_missing_or_invalid": 38,
+      "city_unknown": 0
+    },
+    "labels_standardised": {
+      "sellers.seller_tier": 64
+    },
+    "clean_rows": 420,
+    "merged_into_master": 0,
+    "identity_ok": true
+  },
+  "customers": {
+    "file": "customers",
+    "raw_rows": 45000,
+    "rejected": {
+      "DUPLICATE_EXACT": 0
+    },
+    "repairs": {},
+    "flags": {
+      "registration_date_missing_or_invalid": 497,
+      "birth_year_impossible_set_null": 142,
+      "city_blank_or_invalid": 2233
+    },
+    "labels_standardised": {
+      "customers.gender": 12785
+    },
+    "dedup": {
+      "rule_hits": {
+        "A_email+signals_no_majority_conflict": 1907,
+        "B_phone+birth+city+name": 419
+      },
+      "large_groups_skipped": 0,
+      "customers_merged": 2326
+    },
+    "clean_rows": 42674,
+    "merged_into_master": 2326,
+    "identity_ok": true
+  },
+  "products": {
+    "file": "products",
+    "raw_rows": 3200,
+    "rejected": {
+      "DUPLICATE_EXACT": 0
+    },
+    "repairs": {
+      "cost_price_imputed_from_category_ratio": 170,
+      "list_price_imputed_from_cost": 13
+    },
+    "flags": {
+      "both_prices_missing": 0,
+      "cost_greater_than_list": 67,
+      "weight_impossible_set_null": 17,
+      "weight_missing": 296,
+      "seller_unknown": 0
+    },
+    "labels_standardised": {
+      "products.category": 1339
+    },
+    "dedup": {
+      "products_merged": 2
+    },
+    "clean_rows": 3198,
+    "merged_into_master": 2,
+    "identity_ok": true
+  },
+  "shipping": {
+    "file": "shipping",
+    "raw_rows": 151228,
+    "rejected": {
+      "DUPLICATE_EXACT": 0,
+      "ORPHAN_FK": 0
+    },
+    "repairs": {
+      "negative_fee_made_positive": 159,
+      "fee_imputed_by_order_units_median": 9311,
+      "fee_total_real_values": 77212972.0,
+      "fee_total_added_by_estimates": 4305192.0
+    },
+    "flags": {
+      "delivered_before_shipped": 1269,
+      "delivery_over_60_days": 249,
+      "delivered_status_but_no_valid_delivery_date": 14057,
+      "fee_sentinel_set_null": 166,
+      "fee_missing_to_be_estimated": 9311
+    },
+    "labels_standardised": {
+      "shipping.courier": 30368,
+      "shipping.delivery_status": 37699
+    },
+    "clean_rows": 151228,
+    "merged_into_master": 0,
+    "identity_ok": true
+  },
+  "payments": {
+    "file": "payments",
+    "raw_rows": 168111,
+    "rejected": {
+      "DUPLICATE_EXACT": 3296,
+      "ORPHAN_FK": 0
+    },
+    "repairs": {
+      "negative_amount_made_positive": 663
+    },
+    "flags": {
+      "amount_sentinel_set_null": 162
+    },
+    "labels_standardised": {
+      "payments.payment_method": 36004,
+      "payments.payment_status": 40782
+    },
+    "split_payment_orders": 4815,
+    "clean_rows": 164815,
+    "merged_into_master": 0,
+    "identity_ok": true
+  },
+  "orders": {
+    "file": "orders",
+    "raw_rows": 163200,
+    "rejected": {
+      "DUPLICATE_EXACT": 3200,
+      "INVALID_DATE": 12
+    },
+    "repairs": {
+      "order_date_repaired_from_shipping": 1457,
+      "order_date_repaired_from_payment": 136
+    },
+    "flags": {
+      "order_date_unparseable": 1124,
+      "order_date_out_of_window": 481,
+      "customer_orphan_to_UNKNOWN": 321,
+      "ship_city_blank_or_invalid_to_UNKNOWN": 6388,
+      "order_total_invalid_sentinel_or_nonpositive": 488
+    },
+    "labels_standardised": {
+      "orders.order_status": 38750,
+      "orders.channel": 23830
+    },
+    "clean_rows": 159988,
+    "merged_into_master": 0,
+    "identity_ok": true,
+    "reconciliation": {
+      "MATCH": 159490,
+      "REPORTED_TOTAL_INVALID": 488,
+      "MISMATCH": 10
+    }
+  },
+  "order_items": {
+    "file": "order_items",
+    "raw_rows": 315143,
+    "rejected": {
+      "DUPLICATE_EXACT": 0,
+      "ORPHAN_FK": 0,
+      "PARENT_ORDER_REJECTED": 30,
+      "UNREPAIRABLE_PRICE": 0
+    },
+    "repairs": {
+      "negative_quantity_made_positive": 307,
+      "negative_price_made_positive": 312,
+      "quantity_solved_from_order_total": 624,
+      "price_solved_from_order_total": 1220,
+      "price_from_list_price_fallback": 26,
+      "quantity_imputed_as_1": 17
+    },
+    "flags": {
+      "product_orphan_to_UNKNOWN": 932,
+      "seller_orphan_to_UNKNOWN": 0
+    },
+    "clean_rows": 315113,
+    "merged_into_master": 0,
+    "identity_ok": true
+  },
+  "returns": {
+    "file": "returns",
+    "raw_rows": 16048,
+    "rejected": {
+      "DUPLICATE_EXACT": 0,
+      "ORPHAN_FK": 139,
+      "PARENT_ITEM_REJECTED": 1
+    },
+    "repairs": {
+      "return_date_before_order_shifted_plus_150d": 121,
+      "refund_above_gross_capped_to_line_net": 203
+    },
+    "flags": {
+      "rejected_status_kept_but_invalid": 1311,
+      "return_date_unparseable": 135,
+      "return_before_order_date_not_repairable": 0,
+      "valid_return_on_cancelled_or_in_transit_order": 0,
+      "refund_between_net_and_gross_kept(partial refund on pre-discount price)": 921,
+      "valid_return_with_missing_or_zero_refund": 0
+    },
+    "labels_standardised": {
+      "returns.return_reason": 13256
+    },
+    "clean_rows": 15908,
+    "merged_into_master": 0,
+    "identity_ok": true
+  },
+  "_rejects_by_reason": [
+    {
+      "source_file": "order_items",
+      "reason_code": "PARENT_ORDER_REJECTED",
+      "rows": 30
+    },
+    {
+      "source_file": "orders",
+      "reason_code": "DUPLICATE_EXACT",
+      "rows": 3200
+    },
+    {
+      "source_file": "orders",
+      "reason_code": "INVALID_DATE",
+      "rows": 12
+    },
+    {
+      "source_file": "payments",
+      "reason_code": "DUPLICATE_EXACT",
+      "rows": 3296
+    },
+    {
+      "source_file": "returns",
+      "reason_code": "ORPHAN_FK",
+      "rows": 139
+    },
+    {
+      "source_file": "returns",
+      "reason_code": "PARENT_ITEM_REJECTED",
+      "rows": 1
+    }
+  ]
+}

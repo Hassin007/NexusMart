@@ -1,0 +1,28 @@
+-- =====================================================================
+-- 04_quality_checks.sql - returns one row per check: (check_name, actual, expectation, status, severity).
+-- warehouse.py stores the rows in audit.quality_check_results and FAILS the pipeline if any
+-- CRITICAL check has status FAIL.  WARN checks are reported but do not stop the run.
+-- =====================================================================
+WITH f AS (SELECT * FROM dw.fact_sales),
+fee_by_order AS (
+    SELECT order_id, SUM(shipping_fee) AS alloc_fee FROM dw.fact_sales GROUP BY order_id),
+checks(check_name, actual, expectation, ok, severity) AS (
+  VALUES
+  ('fact_rows_equal_staging_order_items', (SELECT COUNT(*) FROM f)::numeric, '= staging.order_items rows', (SELECT COUNT(*) FROM f) = (SELECT COUNT(*) FROM staging.order_items), 'CRITICAL'),
+  ('fact_duplicate_order_item_ids', ((SELECT COUNT(*) FROM f) - (SELECT COUNT(DISTINCT order_item_id) FROM f))::numeric, '= 0', (SELECT COUNT(*) FROM f) = (SELECT COUNT(DISTINCT order_item_id) FROM f), 'CRITICAL'),
+  ('net_amount_matches_staging_diff', ABS((SELECT SUM(net_amount) FROM f) - (SELECT SUM(net_amount) FROM staging.order_items)), '< 1 PKR', ABS((SELECT SUM(net_amount) FROM f) - (SELECT SUM(net_amount) FROM staging.order_items)) < 1, 'CRITICAL'),
+  ('orders_with_wrongly_allocated_shipping_fee', (SELECT COUNT(*) FROM fee_by_order b JOIN staging.shipping s USING (order_id) WHERE ABS(b.alloc_fee - s.shipping_fee) > 0.01)::numeric, '= 0 (fee counted exactly once)', (SELECT COUNT(*) FROM fee_by_order b JOIN staging.shipping s USING (order_id) WHERE ABS(b.alloc_fee - s.shipping_fee) > 0.01) = 0, 'CRITICAL'),
+  ('returned_lines_equal_valid_returns', (SELECT COUNT(*) FROM f WHERE is_returned)::numeric, '= distinct lines with a valid return', (SELECT COUNT(*) FROM f WHERE is_returned) = (SELECT COUNT(DISTINCT r.order_item_id) FROM staging.returns r JOIN staging.order_items i USING (order_item_id) WHERE r.is_valid_return), 'CRITICAL'),
+  ('refund_total_diff_vs_staging', ABS((SELECT SUM(returned_amount) FROM f) - (SELECT COALESCE(SUM(r.refund_amount),0) FROM staging.returns r JOIN staging.order_items i USING (order_item_id) WHERE r.is_valid_return)), '< 1 PKR', ABS((SELECT SUM(returned_amount) FROM f) - (SELECT COALESCE(SUM(r.refund_amount),0) FROM staging.returns r JOIN staging.order_items i USING (order_item_id) WHERE r.is_valid_return)) < 1, 'CRITICAL'),
+  ('dimensions_with_unknown_member', ((SELECT COUNT(*) FROM dw.dim_date WHERE date_key=-1)+(SELECT COUNT(*) FROM dw.dim_customer WHERE customer_key=-1)+(SELECT COUNT(*) FROM dw.dim_product WHERE product_key=-1)+(SELECT COUNT(*) FROM dw.dim_seller WHERE seller_key=-1)+(SELECT COUNT(*) FROM dw.dim_location WHERE location_key=-1))::numeric, '= 5', ((SELECT COUNT(*) FROM dw.dim_date WHERE date_key=-1)+(SELECT COUNT(*) FROM dw.dim_customer WHERE customer_key=-1)+(SELECT COUNT(*) FROM dw.dim_product WHERE product_key=-1)+(SELECT COUNT(*) FROM dw.dim_seller WHERE seller_key=-1)+(SELECT COUNT(*) FROM dw.dim_location WHERE location_key=-1)) = 5, 'CRITICAL'),
+  ('lines_with_invalid_quantity_price_or_net', (SELECT COUNT(*) FROM f WHERE quantity < 1 OR unit_price <= 0 OR net_amount < 0)::numeric, '= 0', (SELECT COUNT(*) FROM f WHERE quantity < 1 OR unit_price <= 0 OR net_amount < 0) = 0, 'CRITICAL'),
+  ('order_dates_outside_valid_window', (SELECT COUNT(*) FROM f JOIN dw.dim_date d USING (date_key) WHERE d.full_date NOT BETWEEN DATE '2024-01-01' AND DATE '2025-06-30')::numeric, '= 0', (SELECT COUNT(*) FROM f JOIN dw.dim_date d USING (date_key) WHERE d.full_date NOT BETWEEN DATE '2024-01-01' AND DATE '2025-06-30') = 0, 'CRITICAL'),
+  ('lines_not_in_exactly_one_state', (SELECT COUNT(*) FROM f WHERE NOT is_cancelled AND NOT is_kept AND NOT is_returned)::numeric, '= 0 (every non-cancelled line is kept OR returned)', (SELECT COUNT(*) FROM f WHERE NOT is_cancelled AND NOT is_kept AND NOT is_returned) = 0, 'CRITICAL'),
+  ('order_total_reconciliation_pct', ROUND(100.0 * (SELECT COUNT(*) FROM staging.orders WHERE recon_status='MATCH') / NULLIF((SELECT COUNT(*) FROM staging.orders WHERE recon_status <> 'REPORTED_TOTAL_INVALID'),0), 2), '>= 99 %', 100.0 * (SELECT COUNT(*) FROM staging.orders WHERE recon_status='MATCH') / NULLIF((SELECT COUNT(*) FROM staging.orders WHERE recon_status <> 'REPORTED_TOTAL_INVALID'),0) >= 99, 'CRITICAL'),
+  ('unknown_customer_line_share_pct', ROUND(100.0 * (SELECT COUNT(*) FROM f WHERE customer_key=-1) / (SELECT COUNT(*) FROM f), 2), '<= 2 %', 100.0 * (SELECT COUNT(*) FROM f WHERE customer_key=-1) / (SELECT COUNT(*) FROM f) <= 2, 'WARN'),
+  ('unknown_product_line_share_pct', ROUND(100.0 * (SELECT COUNT(*) FROM f WHERE product_key=-1) / (SELECT COUNT(*) FROM f), 2), '<= 2 %', 100.0 * (SELECT COUNT(*) FROM f WHERE product_key=-1) / (SELECT COUNT(*) FROM f) <= 2, 'WARN'),
+  ('unknown_location_line_share_pct', ROUND(100.0 * (SELECT COUNT(*) FROM f WHERE location_key=-1) / (SELECT COUNT(*) FROM f), 2), '<= 6 %', 100.0 * (SELECT COUNT(*) FROM f WHERE location_key=-1) / (SELECT COUNT(*) FROM f) <= 6, 'WARN'),
+  ('valid_returns_on_cancelled_or_in_transit_lines', (SELECT COUNT(*) FROM f WHERE is_returned AND (is_cancelled OR is_in_transit))::numeric, '= 0', (SELECT COUNT(*) FROM f WHERE is_returned AND (is_cancelled OR is_in_transit)) = 0, 'WARN'),
+  ('returned_lines_with_impossible_return_date', (SELECT COUNT(*) FROM f WHERE return_date_key = -1)::numeric, 'reported (blank/impossible date -> Unknown date)', true, 'WARN')
+)
+SELECT check_name, actual, expectation, CASE WHEN ok THEN 'PASS' ELSE 'FAIL' END AS status, severity FROM checks;

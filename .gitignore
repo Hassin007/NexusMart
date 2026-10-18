@@ -1,0 +1,149 @@
+# ==============================================================================
+# NexusMart / Datathon .gitignore
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Environment Variables & Secrets
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+!.env.example
+
+# ------------------------------------------------------------------------------
+# Python & Virtual Environments
+# ------------------------------------------------------------------------------
+venv/
+venv*/
+.venv/
+env/
+env*/
+ENV/
+env.bak/
+venv.bak/
+
+# Bytecode and Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / Packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Testing & Linting
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+
+# ------------------------------------------------------------------------------
+# Data & Pipeline Outputs
+# ------------------------------------------------------------------------------
+# Cleaned and rejected data produced by src/clean.py
+data/clean/*
+!data/clean/.gitkeep
+data/rejects/*
+!data/rejects/.gitkeep
+
+# Temporary / intermediate binary data formats
+*.parquet
+*.feather
+*.pkl
+*.pickle
+*.h5
+
+# Large archives (keep raw dataset files clean)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ------------------------------------------------------------------------------
+# Database & Docker
+# ------------------------------------------------------------------------------
+pgdata/
+*.dump
+*.sql.dump
+*.sqlite
+*.sqlite3
+*.db
+
+# ------------------------------------------------------------------------------
+# Airflow
+# ------------------------------------------------------------------------------
+logs/
+airflow.cfg
+airflow.db
+airflow.db-journal
+airflow-webserver.pid
+standalone_admin_password.txt
+
+# ------------------------------------------------------------------------------
+# Power BI & BI Tools
+# ------------------------------------------------------------------------------
+powerbi/*.tmp
+powerbi/*~*
+*.pbix.tmp
+
+# ------------------------------------------------------------------------------
+# IDEs & Code Editors
+# ------------------------------------------------------------------------------
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+
+# Project-specific / Tooling artifacts
+.freebuff/
+
+# ------------------------------------------------------------------------------
+# Operating System Files
+# ------------------------------------------------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+.directory
+.fuse_hidden*
